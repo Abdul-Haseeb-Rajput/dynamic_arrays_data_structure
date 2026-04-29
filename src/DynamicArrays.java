@@ -70,6 +70,26 @@ public class DynamicArrays<T> {
         data[index] = element;
     }
 
+    // 5. Remove element at index
+    public T removeAt(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        T removed = data[index];
+
+        for (int i = index; i < size - 1; i++) {
+            data[i] = data[i + 1];
+
+        }
+        data[size - 1] = null;
+        size--;
+        if (size < capacity / 4 && capacity > 10) {
+            resize(capacity / 2);
+        }
+        return removed;
+
+    }
+
     // resize
     private void resize(int newCapacity) {
         if (newCapacity < capacity) {
