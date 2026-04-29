@@ -10,6 +10,10 @@ public class App {
         arr.print();
         arr.add(12);
         arr.print();
+        System.out.println(arr.get(2));
+        arr.setAt(35, 2);
+        arr.print();
+        System.out.println(arr.get(2));
 
     }
 }

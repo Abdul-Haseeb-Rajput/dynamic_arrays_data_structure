@@ -54,6 +54,22 @@ public class DynamicArrays<T> {
 
     }
 
+    // 3. Get element
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        return data[index];
+    }
+
+    // 4. Set / Update element
+    public void setAt(T element, int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        data[index] = element;
+    }
+
     // resize
     private void resize(int newCapacity) {
         if (newCapacity < capacity) {
@@ -75,7 +91,6 @@ public class DynamicArrays<T> {
         for (int i = 0; i < size; i++) {
             System.out.print(data[i]);
             if (i < size - 1) {
-                
                 System.out.print(", ");
 
             }
