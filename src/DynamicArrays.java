@@ -92,8 +92,8 @@ public class DynamicArrays<T> {
 
     // resize
     private void resize(int newCapacity) {
-        if (newCapacity < capacity) {
-            newCapacity = size;
+        if (newCapacity < size) {
+            throw new IllegalArgumentException("New capacity cannot be less than size");
         }
 
         T[] newData = (T[]) new Object[newCapacity];

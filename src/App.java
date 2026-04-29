@@ -1,6 +1,6 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        DynamicArrays<Integer> arr = new DynamicArrays<>(5);
+        DynamicArrays<Integer> arr = new DynamicArrays<>(20);
         arr.add(5);
         arr.add(1);
         arr.add(34);
@@ -14,6 +14,12 @@ public class App {
         arr.setAt(35, 2);
         arr.print();
         System.out.println(arr.get(2));
+        arr.removeAt(0);
+        arr.print();
+        arr.removeAt(0);
+        arr.print();
+        arr.removeAt(0);
+        arr.print();
 
     }
 }
